@@ -565,6 +565,112 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@fullcalendar/core", [\
+        ["npm:6.0.3", {\
+          "packageLocation": "./.yarn/cache/@fullcalendar-core-npm-6.0.3-76c9d6c6c5-aacbdf2eae.zip/node_modules/@fullcalendar/core/",\
+          "packageDependencies": [\
+            ["@fullcalendar/core", "npm:6.0.3"],\
+            ["preact", "npm:10.11.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fullcalendar/daygrid", [\
+        ["npm:6.0.3", {\
+          "packageLocation": "./.yarn/cache/@fullcalendar-daygrid-npm-6.0.3-76e7eeaebc-584ba2c671.zip/node_modules/@fullcalendar/daygrid/",\
+          "packageDependencies": [\
+            ["@fullcalendar/daygrid", "npm:6.0.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/@fullcalendar-daygrid-virtual-d02de6aeb5/0/cache/@fullcalendar-daygrid-npm-6.0.3-76e7eeaebc-584ba2c671.zip/node_modules/@fullcalendar/daygrid/",\
+          "packageDependencies": [\
+            ["@fullcalendar/daygrid", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3"],\
+            ["@fullcalendar/core", "npm:6.0.3"],\
+            ["@types/fullcalendar__core", null]\
+          ],\
+          "packagePeers": [\
+            "@fullcalendar/core",\
+            "@types/fullcalendar__core"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fullcalendar/interaction", [\
+        ["npm:6.0.3", {\
+          "packageLocation": "./.yarn/cache/@fullcalendar-interaction-npm-6.0.3-432e56d4c0-07c3405e23.zip/node_modules/@fullcalendar/interaction/",\
+          "packageDependencies": [\
+            ["@fullcalendar/interaction", "npm:6.0.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/@fullcalendar-interaction-virtual-7822ffb794/0/cache/@fullcalendar-interaction-npm-6.0.3-432e56d4c0-07c3405e23.zip/node_modules/@fullcalendar/interaction/",\
+          "packageDependencies": [\
+            ["@fullcalendar/interaction", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3"],\
+            ["@fullcalendar/core", "npm:6.0.3"],\
+            ["@types/fullcalendar__core", null]\
+          ],\
+          "packagePeers": [\
+            "@fullcalendar/core",\
+            "@types/fullcalendar__core"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fullcalendar/list", [\
+        ["npm:6.0.3", {\
+          "packageLocation": "./.yarn/cache/@fullcalendar-list-npm-6.0.3-19aeadd276-75165592cf.zip/node_modules/@fullcalendar/list/",\
+          "packageDependencies": [\
+            ["@fullcalendar/list", "npm:6.0.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/@fullcalendar-list-virtual-56f2ac20c7/0/cache/@fullcalendar-list-npm-6.0.3-19aeadd276-75165592cf.zip/node_modules/@fullcalendar/list/",\
+          "packageDependencies": [\
+            ["@fullcalendar/list", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3"],\
+            ["@fullcalendar/core", "npm:6.0.3"],\
+            ["@types/fullcalendar__core", null]\
+          ],\
+          "packagePeers": [\
+            "@fullcalendar/core",\
+            "@types/fullcalendar__core"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fullcalendar/react", [\
+        ["npm:6.0.4", {\
+          "packageLocation": "./.yarn/cache/@fullcalendar-react-npm-6.0.4-a9b842d959-77d6ba8afc.zip/node_modules/@fullcalendar/react/",\
+          "packageDependencies": [\
+            ["@fullcalendar/react", "npm:6.0.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.4", {\
+          "packageLocation": "./.yarn/__virtual__/@fullcalendar-react-virtual-b672f79352/0/cache/@fullcalendar-react-npm-6.0.4-a9b842d959-77d6ba8afc.zip/node_modules/@fullcalendar/react/",\
+          "packageDependencies": [\
+            ["@fullcalendar/react", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.4"],\
+            ["@fullcalendar/core", "npm:6.0.3"],\
+            ["@types/fullcalendar__core", null],\
+            ["@types/react", "npm:18.0.26"],\
+            ["@types/react-dom", "npm:18.0.10"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@fullcalendar/core",\
+            "@types/fullcalendar__core",\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@gar/promisify", [\
         ["npm:1.1.3", {\
           "packageLocation": "./.yarn/cache/@gar-promisify-npm-1.1.3-ac1a325862-4059f790e2.zip/node_modules/@gar/promisify/",\
@@ -1769,6 +1875,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["preact", [\
+        ["npm:10.11.3", {\
+          "packageLocation": "./.yarn/cache/preact-npm-10.11.3-4973d2dda6-9387115aa0.zip/node_modules/preact/",\
+          "packageDependencies": [\
+            ["preact", "npm:10.11.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["promise-inflight", [\
         ["npm:1.0.1", {\
           "packageLocation": "./.yarn/cache/promise-inflight-npm-1.0.1-5bb925afac-2274948309.zip/node_modules/promise-inflight/",\
@@ -2273,6 +2388,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/web/",\
           "packageDependencies": [\
             ["web", "workspace:packages/web"],\
+            ["@fullcalendar/core", "npm:6.0.3"],\
+            ["@fullcalendar/daygrid", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3"],\
+            ["@fullcalendar/interaction", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3"],\
+            ["@fullcalendar/list", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.3"],\
+            ["@fullcalendar/react", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:6.0.4"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@vitejs/plugin-react", "virtual:569035de073023aa8b0b5018956311b227b0a904329a09033178811fc3e35e666a9055672cf1571918d7dc6006c37bb02ee20b7a6a08428927cea962afec4a25#npm:3.0.1"],\

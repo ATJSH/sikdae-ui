@@ -11,14 +11,14 @@ export interface SikdaeSessionHistory {
   couponId: string;
   badgeName: string;
   useDate: number;
-  state: "CONFIRM";
+  state: string;
   stateName: string;
   price: number;
-  payType: "AMOUNT";
+  payType: string;
   storeInfo: {
     storeId: string;
     storeName: string;
-    supplyType: string;
+    supplyType: number;
     supplyTypes: (
       | {
           code: "LOCAL";
@@ -42,5 +42,15 @@ export interface SikdaeSessionHistory {
 
 export interface SikdaeHistory {
   amount: SikdaeHistoryAmount;
-  histories: SikdaeSessionHistory;
+  histories: SikdaeSessionHistory[];
+}
+
+export interface SanitizedSikdaeHistory {
+  amount: SikdaeHistoryAmount;
+  histories: (Pick<
+    SikdaeSessionHistory,
+    "badgeName" | "useDate" | "state" | "stateName" | "price" | "payType"
+  > & {
+    storeInfo: Pick<SikdaeSessionHistory["storeInfo"], "storeName">;
+  })[];
 }

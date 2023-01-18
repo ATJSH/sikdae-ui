@@ -1,3 +1,7 @@
 # sikdae-ui
 
-<img src="https://play-lh.googleusercontent.com/0T3W6IIZXMdLw5OBVpNqNGHVCOKnC264lJwRzIaDIFKFIV7j94eZlHOVERzrNS_0gdE" width="50%">
+식권대장 앱 네트워크 트래픽에서 가져온 이용내역 데이터들을 예쁘게 렌더링해주는 툴.
+
+## Disclaimer
+
+이 애플리케이션은 개인적인 용도로 만들어졌습니다. 이 애플리케이션은 식권대장 또는 식권대장의 개발사인 (주)벤디스와는 아무런 관련이 없으며, 이 애플리에이션을 사용함으로써 발생하는 모든 책임은 사용자에게 있습니다.
