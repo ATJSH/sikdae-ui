@@ -1,0 +1,13 @@
+{
+  "name": "sikdae-ui",
+  "private": true,
+  "packageManager": "yarn@3.3.1",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
