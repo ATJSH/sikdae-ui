@@ -1,6 +1,6 @@
 # sikdae-ui
 
-<a href="https://sikdae-ui-web.vercel.app/">바로가기</a>
+<a href="http://sikdae-ui.atj.sh">바로가기</a>
 
 식권대장 앱 네트워크 트래픽에서 가져온 이용내역 데이터들을 예쁘게 렌더링해주는 툴.
 
