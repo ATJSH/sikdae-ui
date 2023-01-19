@@ -3,7 +3,10 @@ import listPlugin from "@fullcalendar/list";
 import FullCalendar from "@fullcalendar/react";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { SanitizedSikdaeHistory } from "./modules/sikdae-api/interfaces/hisroty.interface";
+import {
+  SanitizedSikdaeHistory,
+  SikdaeHistory,
+} from "./modules/sikdae-api/interfaces/hisroty.interface";
 import { SANITIZED_SIKDAE_HISTORY_SAMPLE } from "./modules/sikdae-api/sample-data.constant";
 import { rawHistoryAtom } from "./status-atom/raw-history.atom";
 
@@ -15,20 +18,21 @@ const koreanLocaleCurrency = Intl.NumberFormat("ko-KR", {
   currency: "KRW",
   style: "currency",
 });
+
 export function App() {
-  const [historyState, setHistoryState] = useRecoilState(rawHistoryAtom);
+  const [rawHistory, setRawHistory] = useRecoilState(rawHistoryAtom);
   const [sanitizedHistory, setSanitizedHistory] =
     useState<SanitizedSikdaeHistory | null>(null);
   const [selectedHistory, setSelectedHistory] = useState<
-    SanitizedSikdaeHistory["histories"][0] | null
+    SikdaeHistory["histories"][0] | null
   >(null);
 
   useEffect(() => {
     setSanitizedHistory(
-      historyState
+      rawHistory
         ? {
-            amount: historyState?.amount,
-            histories: historyState?.histories.map((history) => ({
+            amount: rawHistory?.amount,
+            histories: rawHistory?.histories.map((history) => ({
               badgeName: history.badgeName,
               useDate: history.useDate + getRandomArbitrary(-100000, 100000),
               state: history.state,
@@ -42,12 +46,12 @@ export function App() {
           }
         : null
     );
-  }, [historyState]);
+  }, [rawHistory]);
 
   function handleOnChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     try {
       if (e.target.value) {
-        setHistoryState(JSON.parse(e.target.value));
+        setRawHistory(JSON.parse(e.target.value));
       }
     } catch (error) {
       console.error(error);
@@ -55,7 +59,7 @@ export function App() {
   }
 
   function setSampleDataOnHistoryState() {
-    setHistoryState(SANITIZED_SIKDAE_HISTORY_SAMPLE);
+    setRawHistory(SANITIZED_SIKDAE_HISTORY_SAMPLE);
   }
 
   try {
@@ -141,23 +145,43 @@ export function App() {
         </div>
         <br />
         <h1>데이터 분석</h1>
-        {historyState && (
+        {rawHistory && (
           <div>
             <h2>통계</h2>
             <hr />
             <ul>
               <li>
                 총 사용 금액:{" "}
-                {koreanLocaleCurrency.format(historyState.amount.totalAmount)}원
+                {koreanLocaleCurrency.format(rawHistory.amount.totalAmount)}원
               </li>
-              <li>총 이용 횟수: {historyState.histories.length}회</li>
+              <li>총 이용 횟수: {rawHistory.histories.length}회</li>
               <li>
                 평균 사용 금액:{" "}
                 {koreanLocaleCurrency.format(
-                  historyState.amount.totalAmount /
-                    historyState.histories.length
+                  rawHistory.amount.totalAmount / rawHistory.histories.length
                 )}
                 원
+              </li>
+              <li>
+                식당별 이용횟수
+                <ul>
+                  {Object.entries(
+                    rawHistory.histories.reduce((acc, cur) => {
+                      const storeName = cur.storeInfo.storeName;
+                      if (!acc[storeName]) {
+                        acc[storeName] = 0;
+                      }
+                      acc[storeName] += 1;
+                      return acc;
+                    }, {} as Record<string, number>)
+                  )
+                    .sort((a, b) => b[1] - a[1])
+                    .map(([storeName, count]) => (
+                      <li key={storeName}>
+                        {storeName}: {count}회
+                      </li>
+                    ))}
+                </ul>
               </li>
             </ul>
           </div>
@@ -199,8 +223,8 @@ export function App() {
             }
             locale={"ko"}
             events={
-              historyState
-                ? historyState.histories.map((history) => ({
+              rawHistory
+                ? rawHistory.histories.map((history) => ({
                     start: new Date(history.useDate),
                     title: `${
                       history.storeInfo.storeName
