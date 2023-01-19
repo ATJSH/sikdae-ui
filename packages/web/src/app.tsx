@@ -65,14 +65,14 @@ export function App() {
   try {
     return (
       <div>
-        <h1>Sikdae-UI</h1>
+        <h1>🍋 Sikdae-UI</h1>
         <div>
           <p>
             식권대장 앱 네트워크 트래픽에서 가져온 이용내역 데이터들을 예쁘게
             렌더링해주는 툴.
           </p>
           <button onClick={setSampleDataOnHistoryState}>
-            샘플 데이터로 시험해보기
+            샘플 이력 데이터로 시험해보기
           </button>
         </div>
         <div>
@@ -139,12 +139,12 @@ export function App() {
           </details>
         </div>
         <div>
-          <h2>원본 데이터 입력하기</h2>
+          <h2>원본 이력 데이터 입력하기</h2>
           <hr />
           <textarea onChange={handleOnChange} />
         </div>
         <br />
-        <h1>데이터 분석</h1>
+        <h1>📊 데이터 분석</h1>
         {rawHistory && (
           <div>
             <h2>통계</h2>
@@ -190,8 +190,15 @@ export function App() {
           <h2>Calendar View</h2>
           <hr />
           <div>
-            {selectedHistory ? (
-              <div>
+            <div
+              style={{
+                background: "#eee",
+                width: "fit-content",
+                padding: "0.3em 1em 0.3em 0em",
+                margin: "1em 0",
+              }}
+            >
+              {selectedHistory ? (
                 <ul>
                   <li>
                     날짜:{" "}
@@ -204,13 +211,15 @@ export function App() {
                     {koreanLocaleCurrency.format(selectedHistory.price)}원
                   </li>
                 </ul>
-              </div>
-            ) : (
-              <p>
-                상세 데이터 보기: 캘린더에서 이력을 클릭하면 상세 데이터를
-                확인할 수 있습니다.
-              </p>
-            )}
+              ) : (
+                <ul>
+                  <li>
+                    상세 데이터 보기: 캘린더에서 이력을 클릭하면 상세 데이터를
+                    확인할 수 있습니다.
+                  </li>
+                </ul>
+              )}
+            </div>
           </div>
           <FullCalendar
             plugins={[listPlugin, dayGridPlugin]}
@@ -236,7 +245,7 @@ export function App() {
           />
         </div>
         <div>
-          <h2>원본 데이터 (Sanitized)</h2>
+          <h2>개인식별정보가 지워진 이력 데이터</h2>
           <hr />
           <button
             onClick={() => {
@@ -245,7 +254,17 @@ export function App() {
           >
             복사
           </button>
-          <pre>{JSON.stringify(sanitizedHistory, null, 2)}</pre>
+          <div
+            style={{
+              marginTop: "1em",
+              overflow: "auto",
+              border: "1px solid #eee",
+              padding: "1em",
+              maxHeight: "50vh",
+            }}
+          >
+            <pre>{JSON.stringify(sanitizedHistory, null, 2)}</pre>
+          </div>
         </div>
         <div>
           <h2>Disclaimer</h2>
