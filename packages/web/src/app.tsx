@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import {
   SanitizedSikdaeHistory,
-  SikdaeHistory,
+  SikdaeHistory
 } from "./modules/sikdae-api/interfaces/hisroty.interface";
 import { SANITIZED_SIKDAE_HISTORY_SAMPLE } from "./modules/sikdae-api/sample-data.constant";
 import { rawHistoryAtom } from "./status-atom/raw-history.atom";
@@ -16,7 +16,7 @@ function getRandomArbitrary(min: number, max: number) {
 
 const koreanLocaleCurrency = Intl.NumberFormat("ko-KR", {
   currency: "KRW",
-  style: "currency",
+  style: "currency"
 });
 
 export function App() {
@@ -40,9 +40,9 @@ export function App() {
               price: history.price,
               payType: history.payType,
               storeInfo: {
-                storeName: history.storeInfo.storeName,
-              },
-            })),
+                storeName: history.storeInfo.storeName
+              }
+            }))
           }
         : null
     );
@@ -68,7 +68,7 @@ export function App() {
         <h1>🍋 Sikdae-UI</h1>
         <div>
           <p>
-            식권대장 앱 네트워크 트래픽에서 가져온 이용내역 데이터들을 예쁘게
+            식권대장 앱 네트워크 트래픽에서 가져온 이용내역 데이터들을
             렌더링해주는 툴.
           </p>
           <button onClick={setSampleDataOnHistoryState}>
@@ -82,7 +82,7 @@ export function App() {
             <summary
               style={{
                 cursor: "pointer",
-                color: "blue",
+                color: "blue"
               }}
             >
               사용법 확인하기 (접기/펼치기)
@@ -108,7 +108,7 @@ export function App() {
                   style={{
                     overflowX: "auto",
                     border: "1px solid #eee",
-                    padding: "1em",
+                    padding: "1em"
                   }}
                 >
                   <pre>
@@ -195,7 +195,7 @@ export function App() {
                 background: "#eee",
                 width: "fit-content",
                 padding: "0.3em 1em 0.3em 0em",
-                margin: "1em 0",
+                margin: "1em 0"
               }}
             >
               {selectedHistory ? (
@@ -225,7 +225,7 @@ export function App() {
             plugins={[listPlugin, dayGridPlugin]}
             initialView="listYear"
             headerToolbar={{
-              center: "listYear,dayGridMonth",
+              center: "listYear,dayGridMonth"
             }}
             eventClick={(info) =>
               setSelectedHistory(info.event.extendedProps as any)
@@ -238,7 +238,7 @@ export function App() {
                     title: `${
                       history.storeInfo.storeName
                     } - ${koreanLocaleCurrency.format(history.price)}`,
-                    extendedProps: history,
+                    extendedProps: history
                   }))
                 : []
             }
@@ -260,7 +260,7 @@ export function App() {
               overflow: "auto",
               border: "1px solid #eee",
               padding: "1em",
-              maxHeight: "50vh",
+              maxHeight: "50vh"
             }}
           >
             <pre>{JSON.stringify(sanitizedHistory, null, 2)}</pre>
